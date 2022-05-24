@@ -47,17 +47,16 @@
             Export
           </button>
         </div>
-        <div>
-          <button type="button"
-                  class="text-white bg-orange-700
+        <router-link :to="{ name: 'Consumer'}"
+                     class="text-white bg-orange-700
               hover:bg-orange-800 focus:outline-none
               focus:ring-4 focus:ring-red-300 font-medium
                text-sm px-5 py-2.5 text-center
                mb-2 dark:bg-red-600 dark:hover:bg-red-700
-              dark:focus:ring-red-900">
-            Import
-          </button>
-        </div>
+              dark:focus:ring-red-900"
+        >
+          Import
+        </router-link>
         <router-link :to="{ name: 'Consumer'}"
                      class="text-white bg-orange-700
               hover:bg-orange-800 focus:outline-none
