@@ -75,6 +75,7 @@
            style="border-right: solid 1px gray">
         <div draggable="true"
              @drag="mouseMove"
+             @dragend="endDrag"
              @dragstart="startDrag($event,'Paragraph')"
              class="w-full h-32 flex-col flex items-center justify-center btn cursor-pointer	">
           <div class="w-16 h-16 red"></div>
@@ -82,6 +83,7 @@
         </div>
         <div draggable="true"
              @drag="mouseMove"
+             @dragend="endDrag"
              @dragstart="startDrag($event,'Button')"
              class="w-full h-32 flex-col flex items-center justify-center btn cursor-pointer	">
           <div class="w-16 h-16 red"></div>
@@ -152,6 +154,9 @@ const startDrag = (event, item) => {
   event.dataTransfer.dropEffect = 'move'
   event.dataTransfer.effectAllowed = 'move'
   event.dataTransfer.setData('itemID', item)
+}
+const endDrag = () => {
+  document.querySelectorAll('.btn').forEach(e => e.classList.remove('bg-gray-300'))
 }
 
 const onDrop = (event, list) => {
